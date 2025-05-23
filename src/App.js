@@ -19,29 +19,27 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Redirect root '/' to '/home' */}
+        {/* Redirect root path to /home */}
         <Route path="/" element={<Navigate to="/home" replace />} />
-        
-        {/* Home page */}
+
+        {/* Public pages */}
         <Route path="/home" element={<HomePage />} />
-        
-        {/* Admin Dashboard Routes */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+
+        {/* Admin Dashboard and related routes */}
         <Route path="/AdminDashboards" element={<AdminDashboard />} />
         <Route path="/admin/users" element={<UserManagement />} />
         <Route path="/admin/getAllPatientsForAdmin" element={<AdminViewAllPatients />} />
         <Route path="/admin/analytics" element={<SystemAnalytics />} />
         <Route path="/admin/reports" element={<Reports />} />
-        
-        {/* Authentication Routes */}
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        
-        {/* Patient Routes */}
+
+        {/* Patient specific routes */}
         <Route path="/patient/:patientId" element={<PatientDetails />} />
-        
-        {/* Catch-all for 404 Not Found */}
+
+        {/* Fallback for unmatched routes */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>

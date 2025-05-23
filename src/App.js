@@ -19,7 +19,7 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           
           {/* 🟢 Admin Dashboard Routes */}
